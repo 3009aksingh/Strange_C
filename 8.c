@@ -21,6 +21,14 @@ int main()
     if (NULL)
         printf("%d   hello NULL here!\n", m);
     if (!'0')
+        printf("%d  NOT of zero character here\n", m);
+    if ('0')
         printf("%d    zero character here\n", m);
+    if (1)
+        printf("%d   String NULL \0 \ncharacter here\n", m);
+    if (1)
+        printf("%d   \nString NULL with single inverted'\0' character here\n", n);
+    if ('\0')
+        printf("%d   String NULL \0 character here\n", m);
     return (0);
 }
