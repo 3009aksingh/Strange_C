@@ -7,7 +7,7 @@ struct node
 int main()
 {
     struct node a, b, c, d, e;
-    int *ptr = &a;
+    struct node *ptr = &a;
     a.data = 10;
     b.data = 20;
     c.data = 30;
@@ -19,8 +19,11 @@ int main()
     d.next = &e;
     printf("ptr : %u\n", ptr);
     printf("*ptr : %u\n", *ptr);
-    printf("*ptr+1 : %u\n", *ptr + 1);
+    // printf("node *ptr->data : %u\n", *(ptr->data)); //!ERROR
+    printf("node ptr->next : %u\n", (ptr->next));
+    printf("ptr+1 : %u\n", ptr + 1);
     printf("*(ptr+1) : %u\n", *(ptr + 1));
+    printf("*(ptr+2) : %u\n", *(ptr + 2));
     printf("*(ptr+0) : %u\n", *(ptr + 0));
     printf("*(ptr+10) : %u\n", *(ptr + 10));
     printf("node a base address(&a) : %u\n", &a);
@@ -32,4 +35,9 @@ int main()
     printf("node b base address(b) : %u\n", b);
     printf("node b base address(&b.data) : %u\n", &b.data);
     printf("node a base address(&b.next) : %u\n", &b.next);
+    printf("node ptr->data : %u\n", ptr->data);
+    printf("node a base address(a) : %u\n", a);
+    printf("node a base address(a) : %u\n", a);
+    printf("node a base address(a) : %u\n", a);
+    return 0;
 }
